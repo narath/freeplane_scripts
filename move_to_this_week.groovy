@@ -11,8 +11,9 @@ def moveTo = c.find{ it.text == 'Goals for this week' }[0]
 // clone it if this is "Goals for this week" or "Projects" are a parent
 def pathToRoot = node.getPathToRoot()
 def inProjects = pathToRoot.find{ it.text == 'Projects!' }
+def inActiveProjects = pathToRoot.find{ it.text == 'Active Projects!' }
 
-def shouldClone = inProjects
+def shouldClone = (inProjects || inActiveProjects)
 
 if (shouldClone) {
   moveTo.appendAsCloneWithSubtree(node)
