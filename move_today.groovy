@@ -10,7 +10,7 @@ def moveTo = c.find{ it.text == 'Today!' }[0]
 // are we cloning this or moving it
 // clone it if this is "Goals for this week" or "Projects" are a parent
 def pathToRoot = node.getPathToRoot()
-def inWeek = pathToRoot.find{ it.text == 'Goals for this week' }
+def inWeek = pathToRoot.find{ it.text == 'Goals this week!' }
 def inProjects = pathToRoot.find{ it.text == 'Projects!' }
 def inActiveProjects = pathToRoot.find{ it.text == 'Active Projects!' }
 
